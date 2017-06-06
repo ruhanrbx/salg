@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import fr.com.salg.entity.User;
+import fr.com.salg.entity.UserInfo;
 import fr.com.salg.repository.UserRepo;
-
+@Service
 public class UserServiceImpl implements UserService {
 
 	private UserRepo userRepo;
@@ -19,13 +20,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User findById(Long id) {
+	public UserInfo findById(Long id) {
 
 		return userRepo.findOne(id);
 	}
 
 	@Override
-	public User saveOrUpdate(User user) {
+	public UserInfo saveOrUpdate(UserInfo user) {
 
 		return userRepo.save(user);
 	}
@@ -37,8 +38,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<User> listAll() {
-		List<User> users = new ArrayList<>();
+	public List<UserInfo> listAll() {
+		List<UserInfo> users = new ArrayList<>();
 		userRepo.findAll().forEach(users::add);
 		return users;
 	}
