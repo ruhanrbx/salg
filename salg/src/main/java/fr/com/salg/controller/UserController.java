@@ -15,19 +15,19 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/")
-	public String index(){
+	//@RequestMapping("/")
+	/*public String index(){
 		
 		return "Welcome to the controller!";
 		
-	}
+	}*/
 	
-	@RequestMapping("")
-	public String deleteUser(){
+	//@RequestMapping("")
+	/*public String deleteUser(){
 		
 		return "Welcome to the controller!";
 		
-	}
+	}*/
 	@RequestMapping("/delete{id}")
 	public void  deleteUser(@PathVariable String id){
 		
